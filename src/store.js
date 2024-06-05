@@ -10,16 +10,18 @@ export const store = reactive({
 });
 
 // Funzione che esegue la chiamata 
-export function fetchData() {
+export function fetchData(query = '') {
+    const searchQuery = query || store.searchQuery;
     console.log('Chiamata API in corso');
-    axios.get(`${store.apiUrl}?api_key=${store.apiKey}&query=${store.searchQuery}&language=it-IT`).then (response => {
-        console.log('Risposta dalla chiamata API:', response.data);
-        store.data = response.data.results;
-        store.meta = response.data.info
-    })
-    .catch(error => {
+    axios.get(`${store.apiUrl}?api_key=${store.apiKey}&query=${searchQuery}&language=it-IT`)
+        .then(response => {
+            console.log('Risposta dalla chiamata API:', response.data);
+            store.data = response.data.results;
+            store.meta = response.data.info;
+            console.log('Dati assegnati correttamente:', store.data);
+        })
+        .catch(error => {
             console.error('Errore durante la chiamata API:', error);
         });
-
-    
 }
+

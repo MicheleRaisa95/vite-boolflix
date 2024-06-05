@@ -13,7 +13,13 @@ export default {
       movies: []
     };
   },
+  mounted() {
+    this.fetchDefaultMovies();
+  },
   methods: {
+    fetchDefaultMovies() {
+      fetchData('popular');
+    },
     searchMovies(query) {
       store.searchQuery = query;
       fetchData();

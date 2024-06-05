@@ -8,6 +8,7 @@ export default {
     },
     methods: {
         searchMovies() {
+            console.log('Esecuzione della ricerca:', this.searchQuery);
             this.$emit('search', this.searchQuery);
         }
     }

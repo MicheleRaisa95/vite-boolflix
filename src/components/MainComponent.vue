@@ -12,6 +12,9 @@ export default {
             type: Array,
             default: () => []
         }
+    },
+    mounted() {
+        console.log('Prop movies:', this.movies);
     }
 };
 </script>
