@@ -1,26 +1,40 @@
 <script>
-import FilmListComponent from './FilmListComponent.vue';
-
+import CardFilmComponent from "./CardFilmComponent.vue";
+import { store } from "../store";
 export default {
-    name: 'MainComponent',
+    data() {
+        return {
+            store,
+        };
+    },
     components: {
-        FilmListComponent
-    },
-
-    props: {
-        movies: {
-            type: Array,
-            default: () => []
-        }
-    },
-    mounted() {
-        console.log('Prop movies:', this.movies);
+        CardFilmComponent,
     }
 };
 </script>
 
 <template>
-    <div>
-        <FilmListComponent :movies="movies" />
-    </div>
+    <ul>
+        <li v-for="card in store.movies.filmCard" v-if="card" :key="card.id">
+        <CardFilmComponent
+            :titolo="card.title"
+            :titoloOriginale="card.original_title"
+            :lingua="card.language"
+            :voto="card.vote_average"
+        />
+        </li>
+
+        <li v-if="!store.movies.filmCard">
+        Caricamento in corso...
+        </li>
+        <li v-for="card in store.movies.filmCard || []" :key="card.id">
+        <CardFilmComponent
+            :titolo="card.title"
+            :titoloOriginale="card.original_title"
+            :lingua="card.language"
+            :voto="card.vote_average"
+        />
+        </li>
+    </ul>
+
 </template>
