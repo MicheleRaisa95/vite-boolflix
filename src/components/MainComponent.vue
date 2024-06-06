@@ -19,6 +19,7 @@ export default {
     <ul>
         <li v-for="card in store.movies.filmCard" v-if="card" :key="card.id">
         <CardFilmComponent
+            :copertina="card.poster_path"
             :titolo="card.title"
             :titoloOriginale="card.original_title"
             :lingua="card.original_language"
@@ -45,6 +46,7 @@ export default {
     <ul v-if="store.tvShow.cardTv.length > 0">
         <li v-for="tvCard in store.tvShow.cardTv" v-if="tvCard" :key="tvCard.id">
         <CardFilmComponent 
+        :copertina="tvCard.poster_path"
         :titolo="tvCard.name" 
         :titoloOriginale="tvCard.original_name" 
         :lingua="tvCard.original_language" 

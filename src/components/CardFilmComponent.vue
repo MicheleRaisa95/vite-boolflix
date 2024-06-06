@@ -1,6 +1,7 @@
 <script>
 export default {
     props: [
+        "copertina",
         "titolo",
         "titoloOriginale",
         "lingua",
@@ -10,13 +11,19 @@ export default {
     data() {
         return {
             bandieraItalia: "src/assets/img/bandiera-italia.png",
-            bandierauk: "src/assets/img/bandiera-uk.webp"
-        }
-    }
+            bandierauk: "src/assets/img/bandiera-uk.webp",
+            imgBaseUrl: "https://image.tmdb.org/t/p/w342",
+        };
+    },
 }
 </script>
 
 <template>
+    <!-- copertina -->
+    <div>
+        <img v-if="imgBaseUrl + copertina !== 'https://image.tmdb.org/t/p/w342null'" :src="imgBaseUrl + copertina" :alt="titolo">
+    </div>
+    <!-- copertina -->
     <div>
         <div>
             <h2>

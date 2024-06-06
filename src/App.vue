@@ -31,6 +31,8 @@ export default {
       // console log per vericare il funzionamento della query
       console.log("Query di ricerca:", store.apiParams.apiQuery);
 
+      
+
       this.fetchData(store.movies.apiUrl, store.movies.type);
       if (store.apiParams.apiQuery.trim() !== "") {
         store.movies.titleMovie = `Ecco i film che hai cercato: ${store.apiParams.apiQuery}`;
