@@ -8,7 +8,11 @@ movies: {
     apiUrl: 'https://api.themoviedb.org/3/search/movie',
 },
 
-
+tvShow: {
+    cardTv: [],
+    type: "tv",
+    apiTv: "https://api.themoviedb.org/3/search/tv",
+},
 
 apiParams: {
     region: "Ital",

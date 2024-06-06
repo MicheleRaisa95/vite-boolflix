@@ -35,7 +35,7 @@ export default {
         <div>
             <img v-if="lingua === 'it'" :src="bandieraItalia" alt="bandiera italiana">
 
-            <img v-if="lingua === 'en'" :src="bandierauk" alt="bandiera uk">
+            <img v-else-if="lingua === 'en'" :src="bandierauk" alt="bandiera uk">
 
             <h2 v-else>{{ lingua }}</h2>
 
