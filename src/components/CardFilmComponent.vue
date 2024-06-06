@@ -33,7 +33,7 @@ export default {
         <div>
             <!-- bandiera -->
         <div>
-            <img v-if="lingua === 'it-It'" :src="bandieraItalia" alt="bandiera italiana">
+            <img v-if="lingua === 'it'" :src="bandieraItalia" alt="bandiera italiana">
 
             <img v-if="lingua === 'en'" :src="bandierauk" alt="bandiera uk">
 

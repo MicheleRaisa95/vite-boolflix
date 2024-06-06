@@ -31,7 +31,7 @@ export default {
         <CardFilmComponent
             :titolo="card.title"
             :titoloOriginale="card.original_title"
-            :lingua="card.language"
+            :lingua="card.original_language"
             :voto="card.vote_average"
         />
         </li>
