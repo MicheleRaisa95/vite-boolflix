@@ -13,9 +13,25 @@ export default {
             bandieraItalia: "src/assets/img/bandiera-italia.png",
             bandierauk: "src/assets/img/bandiera-uk.webp",
             imgBaseUrl: "https://image.tmdb.org/t/p/w342",
+            votoDecimi: this.voto,
         };
     },
-}
+    methods: {
+        // converto il voto da 10 a max 5
+        nuovoVoto() {
+            const votoDimezzato = this.votoDecimi / 2;
+            return Math.ceil(votoDimezzato);
+        },
+        // aggiungo le stelle vuote
+        stelleVuote() {
+            if (this.nuovoVoto() < 5) {
+                const mancanti = 5 - this.nuovoVoto();
+                return mancanti;
+            }
+        },
+
+    },
+};
 </script>
 
 <template>
@@ -50,10 +66,11 @@ export default {
         </div>
         </div>
         <!-- /lingua -->
+
+        <!-- voto -->
         <div>
-            <h2>
-                {{ voto }}
-            </h2>
+            
         </div>
     </div>
+    <!-- /voto -->
 </template>
