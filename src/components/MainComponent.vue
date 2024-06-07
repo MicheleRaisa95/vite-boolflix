@@ -8,7 +8,7 @@ export default {
         };
     },
     mounted() {
-      console.log("Film Card:", this.store.movies.filmCard);
+        console.log("Film Card:", this.store.movies.filmCard);
         console.log("TV Card:", this.store.tvShow.cardTv);  
     },
     components: {
