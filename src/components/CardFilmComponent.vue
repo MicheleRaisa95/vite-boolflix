@@ -32,15 +32,15 @@ export default {
     <div class="border-0 rounded-3 card">
         <!-- copertina -->
         <div class="poster">
-            <img v-if="imgBaseUrl + copertina !== 'https://image.tmdb.org/t/p/w342null'" 
-            :src="imgBaseUrl + copertina"
-            :alt="titolo">
-            <font-awesome-icon v-else class="img-copertina" icon="fa-solid fa-film" />
+            <img v-if="imgBaseUrl + copertina !== 'https://image.tmdb.org/t/p/w342null'" :src="imgBaseUrl + copertina"
+                :alt="titolo">
+            <font-awesome-icon v-else class="img-poster" icon="fa-solid fa-film" />
         </div>
         <!-- /copertina -->
 
-        <!-- titolo -->
+        <!-- info card -->
         <div class="p-3 info-card">
+            <!-- titolo -->
             <div>
                 <h4 class="mb-0">Titolo:</h4>
                 <h5>{{ titolo }}</h5>
@@ -53,24 +53,25 @@ export default {
                 <h5>{{ titoloOriginale }}</h5>
             </div>
             <!-- /titolo originale  -->
-        </div>
-        <!-- lingua -->
-        <div>
-            <div>
+
+            <!-- lingua -->
+            <div class="flag">
                 <h4 class="mb-0">Lingua:</h4>
                 <img v-if="lingua === 'it'" :src="bandieraItalia" alt="bandiera italiana">
                 <img v-else-if="lingua === 'en'" :src="bandierauk" alt="bandiera UK">
                 <h4 v-else>{{ lingua }}</h4>
             </div>
-        </div>
+            <!-- /lingua -->
 
-        <!-- voto -->
-        <div>
-            <!-- stelle piene -->
-            <font-awesome-icon v-for="n in nuovoVoto" :key="'filled-' + n" :icon="['fas', 'star']" />
-            <!-- stelle vuote -->
-            <font-awesome-icon v-for="n in stelleVuote" :key="'empty-' + n" :icon="['far', 'star']" />
+            <!-- voto -->
+            <div>
+                <!-- stelle piene -->
+                <font-awesome-icon v-for="n in nuovoVoto" :key="'filled-' + n" :icon="['fas', 'star']" />
+                <!-- stelle vuote -->
+                <font-awesome-icon v-for="n in stelleVuote" :key="'empty-' + n" :icon="['far', 'star']" />
+            </div>
         </div>
+        <!-- /info card -->
     </div>
 </template>
 
@@ -87,26 +88,45 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-poster {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(31, 31, 31);
+        }
     }
-}
 
-.info-card {
-    opacity: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8169468470982143);
-    position: absolute;
-    color: rgb(222, 222, 222);
-    z-index: 5;
-    cursor: pointer;
-    transition: 0.5s;
+    .info-card {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8169468470982143);
+        position: absolute;
+        color: rgb(222, 222, 222);
+        z-index: 5;
+        cursor: pointer;
+        transition: 0.5s;
 
-    &:hover {
-        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
     }
-}
 
-h4 {
-    color: rgb(129, 129, 129);
+    h4 {
+        color: rgb(129, 129, 129);
+    }
+
+    .flag {
+        img {
+            width: 30px;
+            display: block;
+        }
+    }
 }
 </style>
