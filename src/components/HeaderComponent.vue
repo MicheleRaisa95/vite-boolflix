@@ -11,12 +11,26 @@ export default {
 </script>
 
 <template>
-    <header>
-        <!-- input -->
-        <input type="text" id="search" placeholder="Cerca film" v-model="store.apiParams.apiQuery" />
-        <!-- /input -->
+    <header class="p-4 d-flex justify-content-between align-items-center">
+        <!-- logo -->
+        <div class="left d-flex align-items-center">
+            <div class="logo">
+                <img class="logo-img" src="../assets/img/logo-boolflix.jpeg" alt="logo">
+            </div>
+            <h1 class="m-0 d-none d-md-block">Boolflix</h1>
+        </div>
+        <!-- /logo -->
+
+        <div class="right d-flex align-items-center gap-3">
+            <!-- input -->
+            <div class="form-floating">
+                <input type="text" id="search" placeholder="Cerca film o serie tv" v-model="store.apiParams.apiQuery" />
+                <label for="search">Cerca film o serie tv</label>
+            </div>
+            <!-- /input -->
+        </div>
 
         <!-- button -->
-        <button @click="$emit('ricerca')">cerca</button>
+        <button class="btn btn-danger p-3" @click="$emit('ricerca')">cerca</button>
     </header>
 </template>

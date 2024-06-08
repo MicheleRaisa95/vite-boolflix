@@ -8,5 +8,6 @@ Index SASS
 @use './partials/utils' as *;
 @use './partials/typography' as *;
 @use './partials/common' as *;
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 

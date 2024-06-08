@@ -4,6 +4,10 @@ COMMON
 
 @use './variables' as *;
 
-body {
-    background-color: $body-bg-color;
+
+
+.logo-img {
+width: $logo-width;
+height: $logo-height;
 }
+
