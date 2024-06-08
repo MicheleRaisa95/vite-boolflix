@@ -29,16 +29,20 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="border-0 rounded-3 card">
         <!-- copertina -->
-        <div>
-            <img v-if="imgBaseUrl + copertina !== 'https://image.tmdb.org/t/p/w342null'" :src="imgBaseUrl + copertina"
-                :alt="titolo">
+        <div class="poster">
+            <img v-if="imgBaseUrl + copertina !== 'https://image.tmdb.org/t/p/w342null'" 
+            :src="imgBaseUrl + copertina"
+            :alt="titolo">
+            <font-awesome-icon v-else class="img-copertina" icon="fa-solid fa-film" />
         </div>
+        <!-- /copertina -->
+
         <!-- titolo -->
-        <div>
+        <div class="p-3">
             <div>
-                <h2>{{ titolo }}</h2>
+                <h4 class="mb-0">Titolo:</h4>
             </div>
             <div v-show="titolo !== titoloOriginale">
                 <h2>{{ titoloOriginale }}</h2>
@@ -61,3 +65,20 @@ export default {
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+.card {
+    position: relative;
+    width: 342px;
+    height: 500px;
+    overflow: hidden;
+
+    .poster {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+</style>
