@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+.mr-color-red{
+    color: $red-color;
+    
+}
+
+h1{
+    text-transform: uppercase;
+    
+}

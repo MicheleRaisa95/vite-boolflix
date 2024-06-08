@@ -13,11 +13,11 @@ export default {
 <template>
     <header class="p-4 d-flex justify-content-between align-items-center">
         <!-- logo -->
-        <div class="left d-flex align-items-center">
+        <div class="d-flex align-items-center">
             <div class="logo">
                 <img class="logo-img" src="../assets/img/logo-boolflix.jpeg" alt="logo">
             </div>
-            <h1 class="m-0 d-none d-md-block">Boolflix</h1>
+            <h1 class="m-0 d-none d-md-block mr-color-red">Boolflix</h1>
         </div>
         <!-- /logo -->
 
