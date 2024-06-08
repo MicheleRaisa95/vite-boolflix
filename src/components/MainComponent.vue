@@ -20,9 +20,9 @@ export default {
 
 <template>
     <main class="p-3">
-        <h2>{{ store.movies.titleMovie }}</h2>
+        <h2 class="m-5">{{ store.movies.titleMovie }}</h2>
         <!-- lista film -->
-        <ul v-if="store.movies.filmCard.length > 0">
+        <ul v-if="store.movies.filmCard.length > 0" class="d-flex flex-wrap justify-content-center gap-3 p-0">
             <li v-for="card in store.movies.filmCard" :key="card.id">
                 <CardFilmComponent
                     :copertina="card.poster_path"
@@ -49,7 +49,8 @@ export default {
 
 
         <!-- lista tv -->
-        <ul v-if="store.tvShow.cardTv && store.tvShow.cardTv.length > 0">
+        <h2 class="m-5">{{ store.tvShow.titleTv }}</h2>
+        <ul v-if="store.tvShow.cardTv && store.tvShow.cardTv.length > 0" class="d-flex flex-wrap justify-content-center gap-3 p-0" >
             <li v-for="tvCard in store.tvShow.cardTv" :key="tvCard.id">
                 <CardFilmComponent 
                     :copertina="tvCard.poster_path"
