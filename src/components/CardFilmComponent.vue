@@ -43,10 +43,16 @@ export default {
         <div class="p-3">
             <div>
                 <h4 class="mb-0">Titolo:</h4>
+                <h5>{{ titolo }}</h5>
             </div>
+            <!-- /titolo -->
+
+            <!-- titolo originale -->
             <div v-show="titolo !== titoloOriginale">
-                <h2>{{ titoloOriginale }}</h2>
+                <h4 class="mb-0">Titolo Originale:</h4>
+                <h5>{{ titoloOriginale }}</h5>
             </div>
+            <!-- /titolo originale  -->
         </div>
         <!-- lingua -->
         <div>
@@ -56,6 +62,7 @@ export default {
                 <h2 v-else>{{ lingua }}</h2>
             </div>
         </div>
+        
         <!-- voto -->
         <div>
             <!-- stelle piene -->
