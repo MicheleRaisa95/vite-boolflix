@@ -40,7 +40,7 @@ export default {
         <!-- /copertina -->
 
         <!-- titolo -->
-        <div class="p-3">
+        <div class="p-3 info-card">
             <div>
                 <h4 class="mb-0">Titolo:</h4>
                 <h5>{{ titolo }}</h5>
@@ -57,12 +57,13 @@ export default {
         <!-- lingua -->
         <div>
             <div>
+                <h4 class="mb-0">Lingua:</h4>
                 <img v-if="lingua === 'it'" :src="bandieraItalia" alt="bandiera italiana">
                 <img v-else-if="lingua === 'en'" :src="bandierauk" alt="bandiera UK">
-                <h2 v-else>{{ lingua }}</h2>
+                <h4 v-else>{{ lingua }}</h4>
             </div>
         </div>
-        
+
         <!-- voto -->
         <div>
             <!-- stelle piene -->
@@ -87,5 +88,25 @@ export default {
         width: 100%;
         height: 100%;
     }
+}
+
+.info-card {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8169468470982143);
+    position: absolute;
+    color: rgb(222, 222, 222);
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+h4 {
+    color: rgb(129, 129, 129);
 }
 </style>
