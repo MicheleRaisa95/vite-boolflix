@@ -25,7 +25,7 @@ export default {
             <!-- input -->
             <div class="form-floating">
                 <input type="text" id="search" placeholder="Cerca film o serie tv" v-model="store.apiParams.apiQuery" />
-                <label for="search">Cerca film o serie tv</label>
+                
             </div>
             <!-- /input -->
         </div>

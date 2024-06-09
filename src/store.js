@@ -14,6 +14,14 @@ tvShow: {
     apiTv: "https://api.themoviedb.org/3/search/tv",
 },
 
+filmPopolari: {
+    filmPopolari: "https://api.themoviedb.org/3/movie/popular",
+},
+
+tvShowPopolari: {
+    tvShowPopolari: "https://api.themoviedb.org/3/tv/popular",
+},
+
 apiParams: {
     region: "Ital",
     apiKey: "ffacd612e4caaad22f69b22c85aa2b20",
