@@ -6,6 +6,7 @@ export default {
         "titoloOriginale",
         "lingua",
         "voto",
+        "overview",
 
     ],
     data() {
@@ -70,10 +71,20 @@ export default {
                 <!-- stelle vuote -->
                 <font-awesome-icon v-for="n in stelleVuote" :key="'empty-' + n" :icon="['far', 'star']" />
             </div>
+            <!-- /voto -->
+
+            <!-- descrizione -->
+            <div class="descrizione">
+                <h4 class="mb-0">Descrizione:</h4>
+                <p class="mb-0" v-if="overview !== ''">{{ overview }}</p>
+                <p class="mb-0" v-else>Descrizione in arrivo</p>
+            </div>
+            <!-- /descrizione -->
         </div>
         <!-- /info card -->
     </div>
 </template>
+
 
 <style lang="scss" scoped>
 .card {
@@ -115,6 +126,16 @@ export default {
 
         &:hover {
             opacity: 1;
+        }
+    }
+
+    .descrizione {
+        margin-top: 16px;
+        max-height: 150px;
+        overflow-y: auto;
+        padding-right: 10px;
+        p{
+            margin: 0;
         }
     }
 
